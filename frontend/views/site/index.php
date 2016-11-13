@@ -2,52 +2,108 @@
 
 /* @var $this yii\web\View */
 
-$this->title = 'My Yii Application';
+$this->title = 'Центр патології шийки матки';
 ?>
-<div class="site-index">
 
-    <div class="jumbotron">
-        <h1>Congratulations!</h1>
-
-        <p class="lead">You have successfully created your Yii-powered application.</p>
-
-        <p><a class="btn btn-lg btn-success" href="http://www.yiiframework.com">Get started with Yii</a></p>
+<div class="servis">
+    <div class="wrapper">
+        <h3>Услуги</h3>
+        <div class="servis-menu">
+            <ul>
+                <li class="">Гинекология
+                    <div class="sub-menu clearfix">
+                        <ul>
+                            <li>Консультация врача-гинеколога</li>
+                            <li>Лечение эрозий шейки матки</li>
+                            <li>Коагуляция шейки матки</li>
+                            <li>Нарушение менструального цикла</li>
+                            <li>Полипы эндометрия — диагностика, лечение</li>
+                            <li>Гиперпластические процессы эндометрия</li>
+                            <li>Гистероскопия</li>
+                        </ul>
+                        <ul>
+                            <li>Цервикоскопия</li>
+                        </ul>
+                    </div>
+                </li>
+                <li>Лечение половых инфекций
+                    <div class="sub-menu clearfix">
+                        <ul>
+                            <li>Обследование на ЗППП</li>
+                            <li>Лабораторная диагностика</li>
+                            <li>Диагностика и лечение хламидиоза</li>
+                            <li>Гарднереллез</li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    Лечение Бесплодия
+                    <div class="sub-menu clearfix">
+                        <ul>
+                            <li>Лечение бесплодия</li>
+                            <li>Диагностика ранних сроков беременности</li>
+                            <li>Гиперпролактинемия</li>
+                            <li>Гормональное обследование щитовидной железы</li>
+                            <li>Подготовка к ЭКО</li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
     </div>
-
-    <div class="body-content">
-
-        <div class="row">
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/doc/">Yii Documentation &raquo;</a></p>
+</div>
+<div class="wrapper">
+    <div class="item-servis">
+        <div class="singl-block clearfix">
+            <img src="/icon/servis-img.jpg" alt="" class="banner">
+            <div class="left-block fl-l">
+                <div class="item">
+                    <h3>Гинекология</h3>
+                    <p>Каждой здоровой женщине рекомендуется один раз проходить профилактический осмотр у
+                        гинеколога. Если же есть жалобы, имеются хронические воспалительные процессы малого таз,
+                        нарушения менструального цикла, то вам просто необходим регулярный осмотр
+                        гинеколога.</p>
+                    <p>Мы окажем помощь при любых женских заболеваниях и проблемах,
+                        проведем диагностику и лечение многих гинекологических заболеваний.</p>
+                </div>
+                <div class="item">
+                    <h3>Гистероскопия</h3>
+                    <ul>
+                        <li>Диагностическая гистероскопия</li>
+                        <li>Оперативная гистероскопия</li>
+                        <li>Гистероскопия матки</li>
+                    </ul>
+                </div>
+                <div class="item">
+                    <h3>УЗИ-диагностика</h3>
+                    <p>Ультразвуковая диагностика – это безопасный, безболезненный, высокоинформативный,
+                        неинвазивный и доступный метод обследования пациента. Профилактическое УЗИ позволяет
+                        выявить минимальные нарушения на самых ранних этапах заболевания</p>
+                </div>
             </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/forum/">Yii Forum &raquo;</a></p>
-            </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/extensions/">Yii Extensions &raquo;</a></p>
+            <div class="right-block fl-r">
+                <div class="item">
+                    <h3>Андрология</h3>
+                    <p>Основными направлениями андрологии являются мужское бесплодие, нарушение половой функции
+                        у мужчин (эректильная дисфункция, проблемы старения у мужчин. Согласно статистике,
+                        каждая седьмая супружеская пара оказывается бесплодной, то есть не способной к зачатию
+                        ребенка без помощи медицины. СЛЕДУЕТ ОТМЕТИТЬ, ЧТО ЗАБОЛЕВАНИЯ ЖЕНЩИНЫ СТАНОВЯТСЯ
+                        ПРИЧИНОЙ БЕСПЛОДИЯ ЛИШЬ У 40 % СУПРУЖЕСКИХ ПАР, КОТОРЫЕ НЕ МОГУТ ЗАВЕСТИ РЕБЕНКА. В 45 %
+                        СЛУЧАЕВ «ВИНОВНЫМ» оказывается мужчина.</p>
+                </div>
+                <div class="item">
+                    <h3>Лабораторная диагностика</h3>
+                    <p>Сегодня медицина и лабораторная диагностика – это неразрывные понятия, это залог
+                        правильного лечения каждого больного, в чем заинтересованы все специалисты нашего
+                        медицинского центра</p>
+                </div>
+                <div class="item">
+                    <h3>Урология</h3>
+                    <p>Специалисты нашей клиники проводят диагностику и лечение таких заболеваний мочеполовой
+                        системы как заболевания мочевого пузыря, почек, мочеточечников. Уретриты, простатиты,
+                        аденомы и так далее.</p>
+                </div>
             </div>
         </div>
-
     </div>
 </div>

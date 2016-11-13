@@ -9,6 +9,7 @@ use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use frontend\assets\AppAsset;
 use common\widgets\Alert;
+use yii\bootstrap\Modal;
 
 AppAsset::register($this);
 ?>
@@ -18,64 +19,57 @@ AppAsset::register($this);
 <head>
     <meta charset="<?= Yii::$app->charset ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="logo.png"/>
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
 </head>
 <body>
-<?php $this->beginBody() ?>
-
-<div class="wrap">
+<div id="kontakts">
     <?php
-    NavBar::begin([
-        'brandLabel' => 'My Company',
-        'brandUrl' => Yii::$app->homeUrl,
-        'options' => [
-            'class' => 'navbar-inverse navbar-fixed-top',
-        ],
+    $this->beginBody();
+
+    echo $this->render('siteparts/_header');
+
+    Modal::begin([
+        'header' => '<h2></h2>',
+        'id' => 'modal-appointment'
     ]);
-    $menuItems = [
-        ['label' => 'Home', 'url' => ['/site/index']],
-        ['label' => 'About', 'url' => ['/site/about']],
-        ['label' => 'Contact', 'url' => ['/site/contact']],
-    ];
-    if (Yii::$app->user->isGuest) {
-        $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
-        $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
-    } else {
-        $menuItems[] = '<li>'
-            . Html::beginForm(['/site/logout'], 'post')
-            . Html::submitButton(
-                'Logout (' . Yii::$app->user->identity->username . ')',
-                ['class' => 'btn btn-link logout']
-            )
-            . Html::endForm()
-            . '</li>';
-    }
-    echo Nav::widget([
-        'options' => ['class' => 'navbar-nav navbar-right'],
-        'items' => $menuItems,
-    ]);
-    NavBar::end();
+
+    echo '<div id="modal-content"></div>';
+
+    Modal::end();
     ?>
 
-    <div class="container">
-        <?= Breadcrumbs::widget([
-            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-        ]) ?>
-        <?= Alert::widget() ?>
-        <?= $content ?>
+
+    <?= Breadcrumbs::widget(['links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],]) ?>
+    <?= Alert::widget() ?>
+    <div class="inside">
+        <div class="servis-inside">
+            <div class="wrapper">
+                <div class="call-me-back fl-r">
+                    <a href="#">Перезвоните мне</a>
+                    <div class="form-hide">
+                        <form method="post" class="appointment">
+                            <input type="text" name="uname" placeholder="Имя">
+                            <input type="text" name="tel" placeholder="Телефон" required title="Формат: (096)999 99 99">
+                            <input type="submit" value="Свяжитесь со мной">
+                        </form>
+                    </div>
+                </div>
+                <br><br>
+                <div class="item-servis">
+                    <div class="singl-block clearfix">
+                    </div>
+                </div>
+            </div>
+            <?= $content ?>
+        </div>
     </div>
+
+
+    <?= $this->render('siteparts/_footer') ?>
 </div>
-
-<footer class="footer">
-    <div class="container">
-        <p class="pull-left">&copy; My Company <?= date('Y') ?></p>
-
-        <p class="pull-right"><?= Yii::powered() ?></p>
-    </div>
-</footer>
-
 <?php $this->endBody() ?>
 </body>
 </html>

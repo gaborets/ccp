@@ -13,12 +13,29 @@ return [
     'controllerNamespace' => 'frontend\controllers',
     'components' => [
         'request' => [
+            'class' => '\yii\web\Request',
+            'baseUrl' => '',
             'csrfParam' => '_csrf-frontend',
+            'parsers' => [
+                'application/json' => 'yii\web\JsonParser',
+            ],
         ],
         'user' => [
             'identityClass' => 'common\models\User',
             'enableAutoLogin' => true,
             'identityCookie' => ['name' => '_identity-frontend', 'httpOnly' => true],
+        ],
+        'mailer' => [
+            'class' => 'yii\swiftmailer\Mailer',
+            'useFileTransport' => false,
+            'transport' => [
+                'class' => 'Swift_SmtpTransport',
+                'host' => 'smtp.gmail.com',
+                'username' => 't.gaborets@gmail.com',
+                'password' => 'adidas88',
+                'port' => '587',
+                'encryption' => 'tls',
+            ],
         ],
         'session' => [
             // this is the name of the session cookie used for login on the frontend
@@ -36,14 +53,23 @@ return [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
-        /*
         'urlManager' => [
             'enablePrettyUrl' => true,
+            'enableStrictParsing' => false,
             'showScriptName' => false,
             'rules' => [
-            ],
-        ],
-        */
+                'GET ' => 'site/index',
+                'GET contact' => 'site/contact',
+                'GET services' => 'site/services',
+                'GET POST reviews' => 'site/reviews',
+                'GET prices' => 'site/prices',
+                'POST appointment' => 'site/appointment',
+                'GET infection' => 'site/infection',
+                'GET polips' => 'site/polips',
+                'GET infertility' => 'site/infertility',
+
+            ]
+        ]
     ],
     'params' => $params,
 ];

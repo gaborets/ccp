@@ -1,17 +1,27 @@
 <?php
 namespace frontend\controllers;
 
+use dosamigos\google\maps\LatLng;
+use dosamigos\google\maps\services\DirectionsWayPoint;
+use dosamigos\google\maps\services\TravelMode;
+use dosamigos\google\maps\overlays\PolylineOptions;
+use dosamigos\google\maps\services\DirectionsRenderer;
+use dosamigos\google\maps\services\DirectionsService;
+use dosamigos\google\maps\overlays\InfoWindow;
+use dosamigos\google\maps\overlays\Marker;
+use dosamigos\google\maps\Map;
+use dosamigos\google\maps\services\DirectionsRequest;
+use dosamigos\google\maps\overlays\Polygon;
+use dosamigos\google\maps\layers\BicyclingLayer;
+
+
 use Yii;
 use yii\base\InvalidParamException;
 use yii\web\BadRequestHttpException;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
-use common\models\LoginForm;
-use frontend\models\PasswordResetRequestForm;
-use frontend\models\ResetPasswordForm;
-use frontend\models\SignupForm;
-use frontend\models\ContactForm;
+use yii\web\Response;
 
 /**
  * Site controller
@@ -75,38 +85,6 @@ class SiteController extends Controller
         return $this->render('index');
     }
 
-    /**
-     * Logs in a user.
-     *
-     * @return mixed
-     */
-    public function actionLogin()
-    {
-        if (!Yii::$app->user->isGuest) {
-            return $this->goHome();
-        }
-
-        $model = new LoginForm();
-        if ($model->load(Yii::$app->request->post()) && $model->login()) {
-            return $this->goBack();
-        } else {
-            return $this->render('login', [
-                'model' => $model,
-            ]);
-        }
-    }
-
-    /**
-     * Logs out the current user.
-     *
-     * @return mixed
-     */
-    public function actionLogout()
-    {
-        Yii::$app->user->logout();
-
-        return $this->goHome();
-    }
 
     /**
      * Displays contact page.
@@ -115,99 +93,83 @@ class SiteController extends Controller
      */
     public function actionContact()
     {
-        $model = new ContactForm();
-        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
-            if ($model->sendEmail(Yii::$app->params['adminEmail'])) {
-                Yii::$app->session->setFlash('success', 'Thank you for contacting us. We will respond to you as soon as possible.');
-            } else {
-                Yii::$app->session->setFlash('error', 'There was an error sending email.');
-            }
-
-            return $this->refresh();
-        } else {
-            return $this->render('contact', [
-                'model' => $model,
-            ]);
-        }
-    }
-
-    /**
-     * Displays about page.
-     *
-     * @return mixed
-     */
-    public function actionAbout()
-    {
-        return $this->render('about');
-    }
-
-    /**
-     * Signs user up.
-     *
-     * @return mixed
-     */
-    public function actionSignup()
-    {
-        $model = new SignupForm();
-        if ($model->load(Yii::$app->request->post())) {
-            if ($user = $model->signup()) {
-                if (Yii::$app->getUser()->login($user)) {
-                    return $this->goHome();
-                }
-            }
-        }
-
-        return $this->render('signup', [
-            'model' => $model,
+        $coord = new LatLng(['lat' => 50.45145707, 'lng' => 30.5119727]);
+        $map = new Map([
+            'center' => $coord,
+            'zoom' => 18,
+            'width' => '100%'
         ]);
-    }
 
-    /**
-     * Requests password reset.
-     *
-     * @return mixed
-     */
-    public function actionRequestPasswordReset()
-    {
-        $model = new PasswordResetRequestForm();
-        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
-            if ($model->sendEmail()) {
-                Yii::$app->session->setFlash('success', 'Check your email for further instructions.');
-
-                return $this->goHome();
-            } else {
-                Yii::$app->session->setFlash('error', 'Sorry, we are unable to reset password for email provided.');
-            }
-        }
-
-        return $this->render('requestPasswordResetToken', [
-            'model' => $model,
+        $marker = new Marker([
+            'position' => $coord,
+            'title' => 'My Home Town',
         ]);
+
+
+        $marker->attachInfoWindow(
+            new InfoWindow([
+                'content' => $this->renderPartial('_attach-info-window')
+            ])
+        );
+
+        $map->addOverlay($marker);
+
+
+        $map->setName('gmap');
+        $marker->setName('gmarker');
+
+        $map->appendScript("google.maps.event.addListenerOnce(gmap, 'idle', function(){
+            google.maps.event.trigger(gmarker, 'click');
+        });");
+
+        return $this->render('contact', ['map' => $map]);
     }
 
-    /**
-     * Resets password.
-     *
-     * @param string $token
-     * @return mixed
-     * @throws BadRequestHttpException
-     */
-    public function actionResetPassword($token)
+    public function actionServices()
     {
-        try {
-            $model = new ResetPasswordForm($token);
-        } catch (InvalidParamException $e) {
-            throw new BadRequestHttpException($e->getMessage());
-        }
-
-        if ($model->load(Yii::$app->request->post()) && $model->validate() && $model->resetPassword()) {
-            Yii::$app->session->setFlash('success', 'New password was saved.');
-
-            return $this->goHome();
-        }
-
-        return $this->render('resetPassword', [
-            'model' => $model,
-        ]);
+        return $this->render('services');
     }
+
+    public function actionPrices()
+    {
+        return $this->render('prices');
+    }
+
+    public function actionAppointment()
+    {
+        Yii::$app->getResponse()->format = Response::FORMAT_JSON;
+        $name = Yii::$app->getRequest()->getBodyParam('name', '');
+        $tel = Yii::$app->getRequest()->getBodyParam('tel', '');
+
+        if(!$tel) {
+            return Yii::$app->getResponse()->setStatusCode(412, 'Телефон не может быть пустым');
+        }
+
+        Yii::$app->mailer->compose()
+            ->setFrom('info@ccp.co.ua')
+            ->setTo('chaos_09@mail.ru')
+            ->setSubject('Запесь на прийом #appointment')
+            ->setHtmlBody(sprintf('<p><b>Имя: %s</b> <b>Телефон: %s</b>', $name, $tel))
+            ->send();
+
+        return '';
+    }
+
+
+    public function actionInfection()
+    {
+        return $this->render('infection');
+    }
+
+    public function actionPolips()
+    {
+        return $this->render('polips');
+    }
+
+    public function actionInfertility()
+    {
+        return $this->render('infertility');
+    }
+
+
 }
