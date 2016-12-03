@@ -10,249 +10,219 @@
 
 $this->title = 'Цены';
 ?>
+<!-- contact section -->
+<section class="prices">
+    <header class="prices__title">
+        <h1>НАШИ ЦЕНЫ</h1>
+    </header>
+    <div class="container">
+        <div class="text-left">
+            <h2>ВНИМАНИЕ: Цены указаны с учетом одноразовых медицинских наборов</h2>
+        </div>
+        <div class="prices__container">
 
-<div class="price">
-    <div class="wrapper">
-        <h1>Цены</h1>
-        <div style="margin: 33px 0 0 0;">
-            <strong>Прайс-лист на услуги клиники CCP</strong><br>
-            <em>ВНИМАНИЕ: данный прайс носит ознакомительный характер. Цены на услуги могут меняться. Актуальные цены необходимо уточнять позвонив на колл–центр или у администраторов клиники</em></div>
-        <ul class="question" id="accordion" role="tablist" aria-multiselectable="true">
-            <li>
-                <div class="title">
-                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        КОНСУЛЬТАЦИИ ВРАЧЕЙ
-                    </a>
-                </div>
-                <div class="answer collapse in" id="collapseOne" role="tabpanel" aria-labelledby="headingOne">
-                    <div class="item clearfix">
-                        <div>Консультация врача-гинеколога<br>
-                            (сбор анамнеза, осмотр, предварительный<br>
-                            Диагноз, рекомендации)</div>
-                        <div>250 гривен</div>
+            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                <div class="panel panel-default">
+
+                    <div class="panel-heading" role="tab" href="#collapseOne" >
+                        <h4 class="panel-title">
+                            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                КОНСУЛЬТАЦИИ ВРАЧЕЙ
+                            </a>
+                        </h4>
                     </div>
-                    <div class="item clearfix">
-                        <div>Повторная консультация консультация врача<br>
-                            (окончательный диагноз, рекомендации<br>
-                            По лечению)</div>
-                        <div>200  гривен</div>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="title">
-                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                        медицинские услуги
-                    </a>
-                </div>
-                <div class="answer collapse" id="collapseTwo" role="tabpanel" aria-labelledby="headingTwo">
-                    <div class="item clearfix">
-                        <div>Медикаментозное прерывание беременности<br>
-                            (консультация,  прием таблеток в 2 этапа<br>
-                            УЗИ-мониторинг)</div>
-                        <div>2500 гривен</div>
-                    </div>
-                    <div class="item clearfix">
-                        <div>Видеокольпоскопия расширенная</div>
-                        <div>200 гривен</div>
-                    </div>
-                    <div class="item clearfix">
-                        <div>Введение  ВМК</div>
-                        <div>350 гривен</div>
-                    </div>
-                    <div class="item clearfix">
-                        <div>Извлечение ВМК за «усы»</div>
-                        <div>250 гривен</div>
-                    </div>
-                    <div class="item clearfix">
-                        <div>Криодеструкция шейки матки</div>
-                        <div>900  гривен</div>
-                    </div>
-                    <div class="item clearfix">
-                        <div>Назначение схемы лечения ЗППП</div>
-                        <div>300 гривен</div>
-                    </div>
-                    <div class="item clearfix">
-                        <div>Назначение схемы лечения хронических<br>
-                            Воспалительных заболеваний</div>
-                        <div>300  гривен</div>
-                    </div>
-                    <div class="item clearfix">
-                        <div>Назначение схемы лечения нарушений<br>
-                            Менструального цикла</div>
-                        <div>300  гривен</div>
-                    </div>
-                    <div class="item clearfix">
-                        <div>Назначение схемы лечения эндометриоза</div>
-                        <div>300  гривен</div>
-                    </div>
-                    <div class="item clearfix">
-                        <div>Назначение схемы лечения миомы матки</div>
-                        <div>300  гривен</div>
-                    </div>
-                    <div class="item clearfix">
-                        <div>Назначение схемы лечения кист яичников</div>
-                        <div>300 гривен</div>
-                    </div>
-                    <div class="item clearfix">
-                        <div>Назначение схемы лечения гормональных<br>
-                            Нарушений    (аменорея, гиперпролактинемия,<br>
-                            Гиперандрогения, СПКЯ )</div>
-                        <div>400  гривен</div>
-                    </div>
-                    <div class="item clearfix">
-                        <div>Назначение схемы стимуляции овуляции</div>
-                        <div>400 – 1200 гривен</div>
-                    </div>
-                    <div class="item clearfix">
-                        <div>Биопсия шейки матки конхотомом или<br>
-                            Радиоволновой петлей  с патгистологическим исследованием  без стоимости анестезии</div>
-                        <div>550  гривен</div>
-                    </div>
-                    <div class="item clearfix">
-                        <div>Химическая коагуляция шейки матки<br>
-                            ( без стоимости препарата)</div>
-                        <div>250  гривен</div>
-                    </div>
-                    <div class="item clearfix">
-                        <div>Радиоволновая коагуляция шейки матки<br>
-                            1-2  зоны ( без стоимости анестезии)</div>
-                        <div>1000  гривен</div>
-                    </div>
-                    <div class="item clearfix">
-                        <div>Радиоволновая коагуляция шейки матки<br>
-                            1-3 зоны  ( без стоимости анестезии)</div>
-                        <div>1200  гривен</div>
-                    </div>
-                    <div class="item clearfix">
-                        <div>Анестезия местная апликационная </div>
-                        <div>100 гривен</div>
-                    </div>
-                    <div class="item clearfix">
-                        <div>Вакцинация от вируса папилломы человека<br>
-                            ( со стоимостью вакцины Церварикс)</div>
-                        <div>900  гривен</div>
-                    </div>
-                    <div class="item clearfix">
-                        <div>Вакцинация от вируса папилломы человека<br>
-                            ( без стоимости вакцины )</div>
-                        <div>250 гривен</div>
-                    </div>
-                    <div class="item clearfix">
-                        <div>Патогистологическое исследование<br>
-                            Материала</div>
-                        <div>350 гривен</div>
+
+                    <div id="collapseOne" class="panel-collapse collapse in">
+                        <div class="panel-body">
+                            <table>
+                                <tr>
+                                    <td>Консультация врача акушера-гинеколога</td>
+                                    <td>300 гривен</td>
+                                </tr>
+                                <tr>
+                                    <td>Повторная консультация врача</td>
+                                    <td>200 гривен</td>
+                                </tr>
+                            </table>
+                        </div>
                     </div>
                 </div>
-            </li>
-            <li>
-                <div class="title">
-                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">лабораторные методы обследования</a>
-                </div>
-                <div class="answer collapse" id="collapseThree" role="tabpanel" aria-labelledby="collapseThree">
-                    <div class="item clearfix">
-                        <div>ДНК- диагностика инфекций, передающихся<br>
-                            Половым путем ( одна инфекция)</div>
-                        <div>120  гривен</div>
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" href="#collapseTwo">
+                        <h4 class="panel-title">
+                            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                медицинские услуги
+                            </a>
+                        </h4>
                     </div>
-                    <div class="item clearfix">
-                        <div>ДНК-диагностика вируса папилломы<br>
-                            Человека ВПЧ – скриннинг</div>
-                        <div>150 гривен</div>
-                    </div>
-                    <div class="item clearfix">
-                        <div>ДНК-диагностика вируса папилломы<br>
-                            Человека ВПЧ-генотипирование</div>
-                        <div>300 гривен</div>
-                    </div>
-                    <div class="item clearfix">
-                        <div>Фемофлор – 16 микроорганизмов<br>
-                            (исследование биоценоза вагинальной  флоры)</div>
-                        <div>520 гривен</div>
-                    </div>
-                    <div class="item clearfix">
-                        <div>Анализ выдений ( женский мазок)</div>
-                        <div>100 гривен</div>
-                    </div>
-                    <div class="item clearfix">
-                        <div>Цитологическое обследование<br>
-                            На атипические клетки</div>
-                        <div>120 гривен</div>
-                    </div>
-                    <div class="item clearfix">
-                        <div>Бакпосев урогенитальных выделений<br>
-                            И определение чувствительности к антибиотикам</div>
-                        <div>200 гривен</div>
-                    </div>
-                    <div class="item clearfix">
-                        <div>Бакпосев урогенитальных выделений<br>
-                            На трихомонаду</div>
-                        <div>200 гривен</div>
-                    </div>
-                    <div class="item clearfix">
-                        <div>Исследование аспирата из полости матки<br>
-                            ( Pipel – биопсия)</div>
-                        <div>450 гривен</div>
-                    </div>
-                    <div class="item clearfix">
-                        <div>Обследование на  RW</div>
-                        <div>100 гривен</div>
-                    </div>
-                    <div class="item clearfix">
-                        <div>Развернутый анализ крови<br>
-                            ( СОЭ, формула крови )</div>
-                        <div>100 гривен</div>
-                    </div>
-                    <div class="item clearfix">
-                        <div>Группа крови, резус-фактор</div>
-                        <div>70 гривен</div>
-                    </div>
-                    <div class="item clearfix">
-                        <div>Общий анализ мочи</div>
-                        <div>50  гривен</div>
-                    </div>
-                    <div class="item clearfix">
-                        <div>Исследование гормонов крови<br>
-                            ( каждый показатель)</div>
-                        <div>от  120 гривен</div>
+                    <div id="collapseTwo" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <table>
+                                <tr>
+                                    <td>Развернутая кольпоскопия</td>
+                                    <td>200 гривен</td>
+                                </tr>
+                                <tr>
+                                    <td>Лечение вагиноза и кольпита</td>
+                                    <td>300 гривен</td>
+                                </tr>
+                                <tr>
+                                    <td>Биопсия шейки матки с патологическим исследование</td>
+                                    <td>500 гривен</td>
+                                </tr>
+                                <tr>
+                                    <td>Анастезя местная</td>
+                                    <td>100 гривен</td>
+                                </tr>
+                                <tr>
+                                    <td>Выскабливание цервикального канала</td>
+                                    <td>500 гривен</td>
+                                </tr>
+                                <tr>
+                                    <td>Назначение схемы лечения хронических и воспалительных заболеваний</td>
+                                    <td>300 гривен</td>
+                                </tr>
+                                <tr>
+                                    <td>Назначение схемы лечения нарушений менструального цикла</td>
+                                    <td>300 гривен</td>
+                                </tr>
+                                <tr>
+                                    <td>Назначение схемы лечения эндометриоза</td>
+                                    <td>300 гривен</td>
+                                </tr>
+                                <tr>
+                                    <td>Назначение схемы лечения миомы матки</td>
+                                    <td>300 гривен</td>
+                                </tr>
+                                <tr>
+                                    <td>Назначение схемы лечения кист яичников</td>
+                                    <td>300 гривен</td>
+                                </tr>
+                                <tr>
+                                    <td>Назначение схемы лечения папиломы человека</td>
+                                    <td>300 гривен</td>
+                                </tr>
+                                <tr>
+                                    <td>Назначение схемы лечения гормональных нарушений (аменорея, гиперпролактинемия, гиперандрогения, СПКЯ)</td>
+                                    <td>400 гривен</td>
+                                </tr>
+                                <tr>
+                                    <td>Назначение схемы стимуляции овуляции</td>
+                                    <td>400 - 1200 гривен</td>
+                                </tr>
+                            </table>
+                        </div>
                     </div>
                 </div>
-            </li>
-            <li>
-                <div class="title">
-                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">лечебные процедуры и манипуляции</a>
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" href="#collapseThree">
+                        <h4 class="panel-title">
+                            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                лабораторные методы обследования
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseThree" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <table>
+                                <tr>
+                                    <td>ДНК- диагностика инфекций, передающихся половым путем (одна инфекция)</td>
+                                    <td>120 гривен</td>
+                                </tr>
+                                <tr>
+                                    <td>ДНК-диагностика вируса папилломы человека ВПЧ – скриннинг</td>
+                                    <td>150 гривен</td>
+                                </tr>
+                                <tr>
+                                    <td>ДНК-диагностика вируса папилломы человека ВПЧ – генотипирование</td>
+                                    <td>300 гривен</td>
+                                </tr>
+                                <tr>
+                                    <td>Фемофлор – 16 микроорганизмов (исследование биоценоза вагинальной флоры)</td>
+                                    <td>520 гривен</td>
+                                </tr>
+                                <tr>
+                                    <td>Анализ выдений (женский мазок)</td>
+                                    <td>100 гривен</td>
+                                </tr>
+                                <tr>
+                                    <td>Цитологическое обследование на атипические клетки</td>
+                                    <td>120 гривен</td>
+                                </tr>
+                                <tr>
+                                    <td>Бакпосев урогенитальных выделений и определение чувствительности к антибиотикам</td>
+                                    <td>200 гривен</td>
+                                </tr>
+                                <tr>
+                                    <td>Бакпосев урогенитальных выделений на трихомонаду</td>
+                                    <td>200 гривен</td>
+                                </tr>
+                                <tr>
+                                    <td>Исследование аспирата из полости матки (Pipel – биопсия)</td>
+                                    <td>450 гривен</td>
+                                </tr>
+                                <tr>
+                                    <td>Обследование на  RW</td>
+                                    <td>100 гривен</td>
+                                </tr>
+                                <tr>
+                                    <td>Развернутый анализ крови (СОЭ, формула крови)</td>
+                                    <td>100 гривен</td>
+                                </tr>
+                                <tr>
+                                    <td>Группа крови, резус-фактор</td>
+                                    <td>70 гривен</td>
+                                </tr>
+                                <tr>
+                                    <td>Общий анализ мочи</td>
+                                    <td>50 гривен</td>
+                                </tr>
+                                <tr>
+                                    <td>Исследование гормонов крови (каждый показатель)</td>
+                                    <td>от 120 гривен</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
                 </div>
-                <div class="answer collapse" id="collapseFour" role="tabpanel" aria-labelledby="collapseFour">
-                    <div class="item clearfix">
-                        <div>Иъекция внутримышечная, подкожная<br>
-                            ( без стоимости лекарства)</div>
-                        <div>30  гривен</div>
+                <div class="panel panel-default">
+                    <div class="panel-heading" href="#collapseFour">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                лечебные процедуры и манипуляции
+                            </a>
+                        </h4>
                     </div>
-                    <div class="item clearfix">
-                        <div>Иъекция внутривенная ( без стоимости<br>
-                            Лекарства)</div>
-                        <div>50 гривен</div>
-                    </div>
-                    <div class="item clearfix">
-                        <div>Ванночка влагалищная, введение тампонов,<br>
-                            Орошение ( без гинекологического  набора)</div>
-                        <div>100  гривен</div>
-                    </div>
-                    <div class="item clearfix">
-                        <div>Инстилляция уретры ( со стоимостью катетера)</div>
-                        <div>150 гривен</div>
-                    </div>
-                    <div class="item clearfix">
-                        <div>Провокационная проба (без стоимости лекарства)</div>
-                        <div>50 гривен</div>
-                    </div>
-                    <div class="item clearfix">
-                        <div>Проба на чувствительность к антибиотикам<br>
-                            ( без стоимости лекарства)</div>
-                        <div>50 гривен</div>
+                    <div id="collapseFour" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <table>
+                                <tr>
+                                    <td>Иъекция внутримышечная, подкожная (без стоимости лекарства)</td>
+                                    <td>30 гривен</td>
+                                </tr>
+                                <tr>
+                                    <td>Ванночка влагалищная, введение тампонов, орошение (без гинекологического набора)</td>
+                                    <td>100 гривен</td>
+                                </tr>
+                                <tr>
+                                    <td>Инстилляция уретры (со стоимостью катетера)</td>
+                                    <td>150 гривен</td>
+                                </tr>
+                                <tr>
+                                    <td>Провокационная проба (без стоимости лекарства)</td>
+                                    <td>50 гривен</td>
+                                </tr>
+                                <tr>
+                                    <td>Проба на чувствительность к антибиотикам (без стоимости лекарства)</td>
+                                    <td>50 гривен</td>
+                                </tr>
+                            </table>
+                        </div>
                     </div>
                 </div>
-            </li>
-        </ul>
-    </div>
-</div>
+            </div>
+
+        </div><!-- ./contact container -->
+    </div><!-- ./container -->
+</section>
+<!-- ./ contact section -->

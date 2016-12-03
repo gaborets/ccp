@@ -140,16 +140,18 @@ class SiteController extends Controller
         Yii::$app->getResponse()->format = Response::FORMAT_JSON;
         $name = Yii::$app->getRequest()->getBodyParam('name', '');
         $tel = Yii::$app->getRequest()->getBodyParam('tel', '');
+        $email = Yii::$app->getRequest()->getBodyParam('email', '');
+        $message = Yii::$app->getRequest()->getBodyParam('message', '');
 
-        if(!$tel) {
-            return Yii::$app->getResponse()->setStatusCode(412, 'Телефон не может быть пустым');
+        if(!$tel && !$email) {
+            return Yii::$app->getResponse()->setStatusCode(412, 'Телефон или емейл должен быть заполненый');
         }
 
         Yii::$app->mailer->compose()
             ->setFrom('info@ccp.co.ua')
-            ->setTo('chaos_09@mail.ru')
-            ->setSubject('Запесь на прийом #appointment')
-            ->setHtmlBody(sprintf('<p><b>Имя: %s</b> <b>Телефон: %s</b>', $name, $tel))
+            ->setTo('gaborets_yuriy@mail.ru')
+            ->setSubject('Запись на прийом #appointment')
+            ->setHtmlBody(sprintf('<p><b>Имя: %s</b><br><b>Телефон: %s</b><br><b>Пошта: %s</b><br><b>Сообщение: %s</b>', $name, $tel, $email, $message))
             ->send();
 
         return '';
@@ -171,5 +173,13 @@ class SiteController extends Controller
         return $this->render('infertility');
     }
 
+    public function actionDysplasia()
+    {
+        return $this->render('dysplasia');
+    }
 
+    public function actionInflammatory()
+    {
+        return $this->render('inflammatory');
+    }
 }

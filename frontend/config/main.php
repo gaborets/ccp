@@ -30,11 +30,10 @@ return [
             'useFileTransport' => false,
             'transport' => [
                 'class' => 'Swift_SmtpTransport',
-                'host' => 'smtp.gmail.com',
-                'username' => 't.gaborets@gmail.com',
+                'host' => 'mail.ccp.co.ua',
+                'username' => 'info@ccp.co.ua', // або 'info'
                 'password' => 'adidas88',
-                'port' => '587',
-                'encryption' => 'tls',
+                'port' => '587', // або '25'
             ],
         ],
         'session' => [
@@ -67,6 +66,8 @@ return [
                 'GET infection' => 'site/infection',
                 'GET polips' => 'site/polips',
                 'GET infertility' => 'site/infertility',
+                'GET inflammatory' => 'site/inflammatory',
+                'GET dysplasia' => 'site/dysplasia',
 
             ]
         ]

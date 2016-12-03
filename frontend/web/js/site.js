@@ -6,13 +6,18 @@ $(function () {
     jQuery('[data-toggle="collapse"]').collapse();
 
     var isSendAppointment = false;
-    $('.appointment').on('submit', function (event) {
+    $('.appointment-form').on('submit', function (event) {
         event.stopPropagation();
         isSendAppointment = true;
         var modal = $('#modal-appointment');
         var modalContent = $('#modal-content');
+        var form = $(this);
+        var msg = form.serialize();
 
-        var msg = $(this).serialize();
+        if(form.hasClass('is-modal')) {
+            modalCallBack('hide');
+        }
+
         $.ajax({
             type: 'POST',
             url: '/appointment',
@@ -34,3 +39,17 @@ $(function () {
         return false;
     });
 });
+
+$(document).ready(function () {
+    $(document).on("click", "#nav", function () {
+        $(".navigations").addClass("active")
+    }), $(document).on("click", "#close-menu", function () {
+        $(".navigations").removeClass("active")
+    })
+});
+
+
+function modalCallBack(status) {
+    $("#call-back").modal(status);
+    return true;
+}

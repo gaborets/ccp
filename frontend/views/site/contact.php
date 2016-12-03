@@ -12,44 +12,66 @@ use yii\captcha\Captcha;
 $this->title = 'Контакты клиники';
 ?>
 
-<div class="kontakt">
-    <div class="wrapper">
-        <h1>Контакты</h1>
-        <div class="items clearfix">
-            <div class="left-b fl-l bg-box">
-                <div class="cb">
-                    <div class="item">
-                        <div class="title adress">Адрес:</div>
-                        <p>вул. Рейтaрська, 15 </p>
-                    </div>
-                    <div class="item">
-                        <div class="title graf">график работы:</div>
-                        <p>Понедельник – Пятница 10.00 – 19.00<br> Суббота 10.00 — 14.00</p>
-                    </div>
-                    <div class="item">
-                        <div class="title email">Email:</div>
-                        <p>info@ccp.co.ua</p>
-                    </div>
+<!-- contact section -->
+<section class="contact">
+    <header class="contact__title">
+        <h1>КОНТАКТЫ</h1>
+    </header>
+    <div class="container">
+        <div class="contact__container">
+            <div class="left-block">
+                <div class="left-block__address">
+                    <p>АДРЕС:</p>
+                    <span>вул. Рейтaрська, 15</span>
                 </div>
-                <div class="cb">
-                    <div class="item">
-                        <div class="title telephon">Телефоны:</div>
-                        <p>(068) 868 11 07</p>
-                        <p>(094) 828 11 07</p>
-                        <p>(044) 228 11 07</p>
-                    </div>
+                <div class="left-block__schedule">
+                    <p>ГРАФИК РАБОТЫ:</p>
+                    <span>Понедельник – Пятница 10.00 – 19.00<br>Суббота 10.00 — 14.00</span>
+                </div>
+                <div class="left-block__email">
+                    <p>EMAIL:</p>
+                    <span>
+                        <a href="mailto:info@ccp.co.ua">info@ccp.co.ua</a>
+                    </span>
+                </div>
+                <div class="left-block__tel">
+                    <p>ТЕЛЕФОНЫ:</p>
+                    <span>(068) 868 1 107</span>
+                    <span>(068) 868 1 107</span>
+                    <span>(068) 868 1 107</span>
                 </div>
             </div>
-            <div class="right-b fl-r bg-box">
-                <div class="title">Запишитесь на прием</div>
-                <form method="post" class="appointment">
-                    <input type="text" name="uname" placeholder="Имя">
-                    <input type="text" name="tel" placeholder="Телефон" required title="Формат: (096) 999 99 99">
-                    <input type="submit" value="Отправить заявку">
+
+            <div class="right-block">
+                <form method="post" class="appointment-form">
+                    <div class="row">
+                        <div class="form-group col-sm-6">
+                            <label for="name">Имя</label>
+                            <input type="text" name="name" class="form-control" id="name" placeholder="Имя" required>
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label for="email">Email</label>
+                            <input type="email" name="email" class="form-control" id="email" placeholder="email" required>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group col-md-12">
+                            <label for="message">Сообщение</label>
+                            <textarea id="message" name="message" class="form-control" rows="5" placeholder="Сообщение"></textarea>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" id="form-submit" class="btn">Отправить сообщение</button>
+                        </div>
+                    </div>
                 </form>
             </div>
-        </div>
-    </div>
-</div>
+        </div><!-- ./contact container -->
+    </div><!-- ./container -->
+</section>
+<!-- ./ contact section -->
 
+<!-- contact-img section -->
+<section class="contact-img"></section>
+<!-- ./ contact-img section -->
 <?= $map->display(); ?>
