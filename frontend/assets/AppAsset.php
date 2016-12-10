@@ -19,6 +19,7 @@ class AppAsset extends AssetBundle
     ];
     public $js = [
         'js/site.js',
+        'js/snow.js'
 //        '@bower/jquery.inputmask/dist/jquery.inputmask.bundle.js'
     ];
     public $depends = [

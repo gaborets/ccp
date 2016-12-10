@@ -22,7 +22,7 @@ $this->title = 'Контакты клиники';
             <div class="left-block">
                 <div class="left-block__address">
                     <p>АДРЕС:</p>
-                    <span>вул. Рейтaрська, 15</span>
+                    <span>ул. Рейтaрская, 15</span>
                 </div>
                 <div class="left-block__schedule">
                     <p>ГРАФИК РАБОТЫ:</p>
